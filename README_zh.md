@@ -1,4 +1,4 @@
-#Android支持标签的文本编辑器与软键盘与面板平滑切换的解决方案
+# Android支持标签的文本编辑器与软键盘与面板平滑切换的解决方案
 
 >[README DOC](./README.md)
 
@@ -7,15 +7,16 @@
 Android中消除软键盘与面板切换时的布局闪动以及提供支持关键词标签的富文本编辑器。
 
 >主要实现三部分功能：
-
+>
 >1. 解决了键盘与扩展面板之间交替切换时布局的闪烁问题。于此同时，键盘上方的控制条布局保持不变。
 >2. 点击`EditText`区域以外的地方，收起所有面板。
 >3. 使`EditText`提供新功能，支持标签文案的高亮展示、点击添加、输入添加和整体删除。
 
-##效果图
+## 效果图
+
 ![][effect_1_gif]![][effect_2_gif]
 
-##主要特点与实现关键点
+## 主要特点与实现关键点
 
 * 控制条在屏幕位置不变的前提下，实现键盘和扩展面板的平滑切换，关键点如下：
   	1. 计算软键盘的高度。参见[LayoutChangeListener.java][LayoutChangeListener_link]。
@@ -25,7 +26,8 @@ Android中消除软键盘与面板切换时的布局闪动以及提供支持关�
 	1. 重写`OnKeyListener`接口的删除键监听方法，实现标签的整体删除，参见[RichOnKeyListener.java][RichOnKeyListener_link]。
 	2. 重写`TextWatcher`接口，实现新增标签的匹配与高亮处理，参见[RichTextWatcher.java][RichTextWatcher_link]。
 
-##Demo
+## Demo
+
 Demo展示了引用Module`libHTagEditor`后，还需要在宿主工程完成的工作：
 
 1. 实例化布局并获得元素的引用。
@@ -33,7 +35,8 @@ Demo展示了引用Module`libHTagEditor`后，还需要在宿主工程完成的�
 3. 实力化处理类，包括实力化主处理类`LayoutHandlerImp`、注册文本编辑框监听器`RichTextWatcher`、注册键盘面板切换按钮事件`SwitcherChangedListener`以及注册布局监听器LayoutChangeListener。
 4. 页面销毁时注销布局监听器。
 
-##License
+## License
+
 ```
 Copyright (C) 2017. Henry Tam (Hosle)
 
