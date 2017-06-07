@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2017. Henry Tam (Hosle)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/comment_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:isScrollContainer="false">
+
+
+        <LinearLayout
+            android:id="@+id/comment_main_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:background="@android:color/darker_gray"
+                android:alpha="50"
+                android:gravity="left|center_vertical"
+                android:text="@string/statment" />
+
+            <EditText
+                android:id="@+id/remarks_inputer"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@null"
+                android:gravity="start|top"
+                android:hint="内容输入区"
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:maxLength="500"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:scrollHorizontally="false"
+                android:scrollbars="vertical"
+                android:singleLine="false"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/tab_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/comment_tag_bar_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <HorizontalScrollView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:layout_weight="1"
+                android:background="@android:color/holo_blue_dark"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/tab_bar_scroll_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center_vertical"
+                    android:orientation="horizontal" />
+            </HorizontalScrollView>
+
+            <CheckBox
+                android:id="@+id/switcher"
+                android:gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/comment_tag_bar_height"
+                android:button="@drawable/switch_selector" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_full_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@android:color/holo_blue_light"
+            android:orientation="vertical"
+            android:paddingTop="15dp"
+            android:visibility="visible" />
+
+    </LinearLayout>
+</LinearLayout>
